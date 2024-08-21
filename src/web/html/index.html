@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/codebox.css">
+    <title>Code block example</title>
+</head>
+<body class="">
+<body class="dark">
+
+    <div class="code-box">
+        <div class="title-box">
+            <p class="file"><a href="#">path/to/file</a></p>
+            <p class="commit">Lines 3 to 12 from <a class="monospace" href="#">cd435fs</a></p>
+        </div>
+
+        <div class="content">
+            <table class="code-listing">
+                    <tbody>
+                        <tr class="code-row">
+                            <td id="l1" class="lineno">3</td>
+                            <td id="lc1" class="linecontent"> uint32_t babyif_get_data_word_gpio(babyif* babyif) { </td>
+                        </tr>
+                        <tr class="code-row">
+                            <td class="lineno">4</td>
+                            <td class="linecontent"></td>
+                        </tr>
+                        <tr class="code-row highlight">
+                            <td class="lineno">5</td>
+                            <td class="linecontent">     uint32_t temp = 0; </td>
+                        </tr>
+                        <tr class="code-row highlight">
+                            <td class="lineno">6</td>
+                            <td class="linecontent">     gpio_put(GPIO_OUT_PTP_B_PULSE, false); </td>
+                        </tr>
+                        <tr class="code-row highlight">
+                            <td id="l1" class="lineno">7</td>
+                            <td id="lc1" class="linecontent"></td>
+                        </tr>
+                        <tr class="code-row highlight">
+                            <td class="lineno">8</td>
+                            <td class="linecontent">     for (int i = 0; i < 4; i++){ </td>
+                        </tr>
+                        <tr class="code-row">
+                            <td class="lineno">9</td>
+                            <td class="linecontent">         for (int j = 0; j < 8; j++) { </td>
+                        </tr>
+                        <tr class="code-row">
+                            <td class="lineno">10</td>
+                            <td class="linecontent">             // printf("%d ", gpio_get(GPIO_IN_DATA_BASE_PIN+j)</td>
+                        </tr>
+                        <tr class="code-row">
+                            <td class="lineno">11</td>
+                            <td class="linecontent">             // shift *then* add, otherwise one bit will be missing </td>
+                        </tr>
+                        <tr class="code-row">
+                            <td class="lineno">12</td>
+                            <td class="linecontent">             temp = temp << 1; </td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>
