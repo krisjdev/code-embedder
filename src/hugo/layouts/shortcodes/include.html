@@ -1,0 +1,7 @@
+<!-- Include/import the contents of a given file -->
+{{- $filepath := .Get 0 -}}
+{{- with readFile $filepath -}}
+{{- . | safeHTML -}}
+{{- else -}}
+<p style="color: red;"><b>Error</b>: Unable to read file at path "{{ $filepath }}"</p>
+{{- end -}}
