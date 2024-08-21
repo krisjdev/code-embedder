@@ -1,0 +1,165 @@
+body.dark {
+    background-color: black;
+}
+
+:root {
+    --light-box-border: rgb(180, 180, 180);
+    --light-title-box-color: rgb(246, 246, 246);
+    --light-file-hyperlink: rgb(31, 118, 218);
+    --light-commit-hyperlink: rgb(0,0,0);
+    --light-lightgrey-text: rgb(96, 96, 96);
+    /* --light-line-highlight: rgba(255, 132, 0, 0.2); */
+    --light-line-highlight: rgba(0, 155, 181, 0.446);
+
+    --dark-box-border: rgb(74, 74, 74);
+    --dark-title-box-color: rgb(34, 35, 39);
+    --dark-content-box-color: rgb(28,29,33);
+    --dark-lightgrey-text: rgb(187, 187, 187);
+    --dark-commit-hyperlink: rgb(207, 207, 207);
+    /* --dark-line-highlight: rgba(254, 151, 41, 0.446); */
+    --dark-line-highlight: rgba(0, 155, 181, 0.446);
+    --dark-line-highlight-emphasis: rgb(228, 0, 128);
+    --dark-code-text-color: rgb(213, 213, 213);
+}
+
+.monospace {
+    font-family: monospace;
+}
+
+.code-box {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%;
+    border: var(--light-box-border) 1px solid;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.code-box .title-box  {
+    background-color: var(--light-title-box-color);
+    border-bottom: var(--light-box-border) 1px solid;
+    padding: 3px;
+    margin: 0;
+}
+
+
+.code-box > .title-box > p {
+    font-size: 0.8rem;
+    font-family: sans-serif;
+}
+
+.code-box > .title-box > .file {
+    font-weight: bold;
+    padding-bottom: 0;
+}
+
+.title-box > p > a:hover,
+.title-box > p > a:visited,
+.title-box > p > a:active,
+.title-box > p > a:link {
+    color: var(--light-file-hyperlink);
+}
+
+.title-box > .commit > a:hover,
+.title-box > .commit > a:visited,
+.title-box > .commit > a:active,
+.title-box > .commit > a:link {
+    color: var(--light-commit-hyperlink)
+}
+
+.code-box > .title-box > .commit {
+    padding-top: 0;
+    color: var(--light-lightgrey-text);
+}
+
+.code-box p {
+    margin: 0;
+    padding: 5px;
+}
+
+.code-box .content {
+    overflow: auto;
+    max-height: 200px;
+    min-height: 1em;
+    scrollbar-width: thin;
+}
+
+.code-listing {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.lineno {
+    text-align: right;
+    min-width: 5%;
+    max-width: 10%;
+    padding-right: 1.5em;
+    padding-left: 1em;
+    color: var(--light-lightgrey-text);
+}
+
+.linecontent {
+    white-space: pre;
+}
+
+.code-row {
+    font-family: monospace;
+    border-left: 6px solid transparent;
+}
+
+.highlight {
+    background-color: var(--light-line-highlight);
+}
+
+.code-row.highlight {
+    box-shadow: -10px 0 var(--light-line-highlight);
+}
+
+.code-row:hover {
+    box-shadow: -10px 0 var(--dark-line-highlight-emphasis) !important;
+}
+
+/* dark mode themeing below */
+
+/* change depending whether the body has the "dark" class enabled */
+/* this is how papermod does it i believe */
+body.dark .code-box {
+    border-color: var(--dark-box-border);
+}
+
+body.dark .code-box > .title-box {
+    background-color: var(--dark-title-box-color);
+    border-color: var(--dark-box-border);
+}
+
+body.dark .code-box > .title-box > .commit {
+    color: var(--dark-lightgrey-text);
+}
+
+body.dark .code-box > .title-box > .commit > a {
+    color: var(--dark-commit-hyperlink);
+}
+
+body.dark .code-box > .content {
+    background-color: var(--dark-content-box-color);
+}
+
+body.dark .lineno {
+    color: var(--dark-lightgrey-text);
+}
+
+body.dark .highlight{
+    background-color: var(--dark-line-highlight);
+}
+
+body.dark .code-row:hover {
+    box-shadow: -10px 0 var(--dark-line-highlight-emphasis) !important;
+}
+
+body.dark .code-row.highlight {
+    box-shadow: -10px 0 var(--dark-line-highlight);
+}
+
+body.dark .linecontent {
+    color: var(--dark-code-text-color);
+}
