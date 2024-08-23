@@ -76,7 +76,7 @@
 
 .code-box .content {
     overflow: auto;
-    max-height: 200px;
+    max-height: 32rem;
     min-height: 1rem;
     scrollbar-width: thin;
 }
@@ -98,6 +98,7 @@
     padding-right: 1.5em;
     padding-left: 1em;
     color: var(--light-lightgrey-text);
+    user-select: none;
 }
 
 .linecontent {
