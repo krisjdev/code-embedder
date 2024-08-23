@@ -20,8 +20,7 @@
 
 /* entire container for code box */
 .code-box {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 1rem auto 1rem auto;
     border: var(--light-box-border) 1px solid;
     border-radius: 10px;
     overflow: hidden;
