@@ -2,9 +2,7 @@
 
 Adding GitHub style code snippets/blocks to a Hugo-based website.
 
-Currently the CSS/HTML for an example block is done, but more work is needed for it to function within Hugo.
+Run ``preprocess.py`` with the GitHub permalink to fetch from, and optionally which lines to highlight. A HTML file will be generated which can then be used to include into your markdown files.
 
-## Todo:
-- [ ] Preprocessor
-- [ ] Syntax definition
-- [ ] Testing with PaperMod
+>[!NOTE]
+> The CSS is intended to be used with the PaperMod theme.
