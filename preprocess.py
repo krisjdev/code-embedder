@@ -26,8 +26,8 @@ class FileInfo():
         
         split_range = range.split("-")
 
-        self.highlight_range_start = int(split_range[0])
-        self.highlight_range_end = int(split_range[1])
+        self.highlight_range_start = int(split_range[0]) -1
+        self.highlight_range_end = int(split_range[1]) -1
 
     def fetch_content(self):
         open_url = urllib.request.urlopen(self.download_path)
@@ -61,16 +61,16 @@ class FileInfo():
         _start_range = None
         _end_range = None
         if self._lines_specified():
-            _start_range = self.start_line_number
-            _end_range = self.end_line_number + 1
+            _start_range = self.start_line_number-1
+            _end_range = self.end_line_number
         else:
             _start_range = 0
             _end_range = len(self.file_content)
 
         for i in range(_start_range, _end_range):
             self.html.append(f"\t\t\t\t<tr class=\"code-row{' code-highlight' if (i >= self.highlight_range_start and i <= self.highlight_range_end) else ''}\">")
-            self.html.append(f"\t\t\t\t\t<td id=\"l{i}\" class=\"lineno\">{i}</td>")
-            self.html.append(f"\t\t\t\t\t<td id=\"lc{i}\" class=\"linecontent\">{self.file_content[i].decode(self.file_encoding).rstrip()}</td>")
+            self.html.append(f"\t\t\t\t\t<td id=\"l{i+1}\" class=\"lineno\">{i+1}</td>")
+            self.html.append(f"\t\t\t\t\t<td id=\"lc{i+1}\" class=\"linecontent\">{self.file_content[i].decode(self.file_encoding).rstrip()}</td>")
             self.html.append(f"\t\t\t\t</tr>")
 
         self.html.append(f"\t\t\t</tbody>\n\t\t</table>\n\t</div>\n</div>")
